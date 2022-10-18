@@ -1,0 +1,24 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2022-10-17T18:30:01+02:00",
+  "id": "Guia de bastionado del arranque de un sistema Debian",
+  "duration": 0,
+  "title": "P1-Bastionado-del-arranque-del-sistema",
+  "summary": "",
+  "source": "codelab.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "url": "Guia de bastionado del arranque de un sistema Debian"
+}
