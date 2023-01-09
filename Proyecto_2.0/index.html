@@ -1,0 +1,104 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Proyecto 2.0: Segmentación de una red.</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid="ID de Google Analytics"
+                  id="BRS-proyecto-2.0"
+                  title="Proyecto 2.0: Segmentación de una red."
+                  environment="web"
+                  feedback-link="Un enlace en el que los usuarios puedan darte feedback (quizás creando un issue en un repositorio de git)">
+    
+      <google-codelab-step label="Introducción" duration="0">
+        <p class="image-container"><img style="width: 600.00px" src="img/e9bf53e3273b0cb9.png"></p>
+<p>Segmentar una red es una de las medidas más básicas de seguridad que podemos llevar a cabo en una infraestructura, ya no solo por incrementar su seguridad sino también por su rendimiento y posibilidad de gestión.</p>
+<p>Como organización, definiremos unos criterios para dividir los equipos de nuestra red. En nuestro caso hemos optado por una división en función de la funcionalidad para así facilitar que los departamentos se comuniquen y compartan recursos entre sí.</p>
+<p>Como hemos optado por una división por funcionalidad realizaremos la división mediante VLSM para así asignar VLANs a los diferentes departamentos de nuestra empresa.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Definición de redes locales virtuales (VLANs)" duration="0">
+        <p>Tras un estudio sobre los departamentos que posee nuestra empresa actualmente se han definido las siguientes redes locales virtuales:</p>
+<h2 is-upgraded>VLANs</h2>
+<aside class="special"><p>VLAN 2 para los servidores de los diferentes servicios.</p>
+</aside>
+<aside class="special"><p>VLAN 3 para el departamento de Administración.</p>
+</aside>
+<aside class="special"><p>VLAN 4 para el departamento de Ventas.</p>
+</aside>
+<aside class="special"><p>VLAN 5 para el departamento de Marketing.</p>
+</aside>
+<aside class="special"><p>VLAN 6 para el departamento de RRHH.</p>
+</aside>
+<aside class="special"><p>VLAN 7 para el departamento de Mantenimiento.</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Cálculo de los direccionamientos de cada VLAN" duration="0">
+        <p>Mediante VLSM hemos realizado el direccionamiento de cada VLAN y hemos obtenido el siguiente resultado:</p>
+<p class="image-container"><img style="width: 600.00px" src="img/8dc103d262d076f7.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Configuración de VLANs en Switches" duration="0">
+        <p>Para la creación y configuración de las diferentes VLANs nos dirigiremos a nuestro Switch, o varios Switches, y por introducir los siguientes comandos:</p>
+<p class="image-container"><img style="width: 600.00px" src="img/769c7cc15ee033fe.png"></p>
+<p>Una vez creadas las diferentes VLANs continuaremos con la configuración de cada una de las interfaces comenzando por aquella que este conectada a nuestro router configurandolo en modo trunk, en caso de que hubiera otro switch este tambien se configuraría en modo trunk.</p>
+<p class="image-container"><img style="width: 600.00px" src="img/5ad947a3d8f17775.png"></p>
+<p>A continuación configuraremos las interfaces que vayan hacia los equipos de las diferentes VLANs en modo access de la siguiente manera:</p>
+<p class="image-container"><img style="width: 600.00px" src="img/17bb671c171d6054.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Configuración de Router mediante método router-on-stick" duration="0">
+        <p>Una vez configurado el switch, o los switches en el caso de que tengamos más de uno, pasaremos a configurar nuestro router mediante el método router-on-stick de la siguiente manera:</p>
+<p class="image-container"><img style="width: 600.00px" src="img/766f8355a2b18bc4.png"></p>
+<p>A continuación configuraremos cada red virtual, es decir, cada VLAN con su puerta de enlace y su mascara de red de la siguiente manera:</p>
+<p class="image-container"><img style="width: 600.00px" src="img/67ee3dd01ff505c7.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Comprobación de las configuraciones en el router y switch" duration="0">
+        <p>Para comprobar en el switch que las configuraciones de las VLANs y su conexión con cada una de las interfaces ejecutamos el siguiente comando en él:</p>
+<p class="image-container"><img style="width: 600.00px" src="img/d99d5159217b7725.png"></p>
+<p>Finalmente para comprobar en el router las configuraciones realizadas en los pasos anteriores ejecutamos el siguiente comando en la terminal de nuestro router:</p>
+<p class="image-container"><img style="width: 600.00px" src="img/a62588b4e6429d9d.png"></p>
+<p class="image-container"><img style="width: 600.00px" src="img/445716b2c68a7dfc.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
