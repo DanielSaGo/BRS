@@ -10,7 +10,7 @@ Para implementar tarjetas inteligentes con doble autenticación en una empresa, 
 
 Para este protocolo se puede utilizar algunas opciones de software de control de acceso como ProxSafe, infraestructura de seguridad como Control de Acceso de HID Global, y lectores de tarjetas inteligentes como los de la marca Identiv. 
 
-
+---
 
 Certificados digitales, para que los trabajadores accedan a sus cuentas de usuario. Esto proporciona una capa adicional de seguridad y asegura que solo la persona autorizada tenga acceso a su información y aplicaciones.
 
@@ -23,7 +23,7 @@ Para implementar este protocolo, se deben seguir los siguientes pasos:
 
 Hay varios software que ofrecen autenticación basadas en certificados digitales, como Microsoft Active Directory Certificate Services y OpenSSL. Es importante elegir un software y proveedor confiable para garantizar la seguridad y la integridad de las cuentas de usuario y la información de la empresa.
 
-
+---
 
 Sistema de autenticación en dos factores para los administradores de sistemas que requiere una combinación de certificados digitales y un código de acceso enviado por SMS. Esto proporciona una capa adicional de seguridad y asegura que solo la persona autorizada tenga acceso a los sistemas y aplicaciones sensibles.
 
@@ -35,7 +35,7 @@ Para implementar este protocolo, se deben seguir los siguientes pasos:
 
 Hay varios software y proveedores que ofrecen soluciones de autenticación de dos factores, como Google Authenticator y Auth0. Es importante elegir un software y proveedor confiable para garantizar la seguridad y la integridad de los sistemas y aplicaciones sensibles.
 
-
+---
 
 Autenticación de usuario y contraseña para acceder a la red de una empresa. Esto proporciona una capa de seguridad y garantiza que solo personas autorizadas tengan acceso a los recursos de la red.
 
@@ -47,7 +47,7 @@ Para implementar este protocolo, se deben seguir los siguientes pasos:
 
 Es importante implementar políticas de seguridad sólidas para garantizar que las contraseñas sean seguras y cumplan con los requisitos de seguridad. Por ejemplo, las contraseñas deben ser suficientemente complejas y deberán cambiarse periódicamente para prevenir ataques de fuerza bruta y otras formas de intrusión.
 
-
+---
 
 Sistemas de biometría, como la huella digital, para tener una forma efectiva de autenticación para acceder a un CPD (Centro de Procesamiento de Datos).
 
